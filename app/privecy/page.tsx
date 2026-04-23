@@ -1,11 +1,5 @@
 export default function PrivacyPolicy() {
-  return (
-    <div className="max-w-4xl mx-auto p-8 prose">
-      <h1>Privacy Policy</h1>
-      {/* Paste your copied text directly here */}
-      <p>Last updated: April 23, 2026</p>
-      <div>
-         <style>
+  const htmlContent = `<style>
   [data-custom-class='body'], [data-custom-class='body'] * {
           background: transparent !important;
         }
@@ -59,8 +53,12 @@ word-break: break-word !important;
       }
     </style>
       </div>
-      <br><div><span data-custom-class='body_text'>This Privacy Policy was created using Termly's </span><a href="https://termly.io/products/privacy-policy-generator/" target="_blank" rel="noopener external" data-custom-class='link'>Privacy Policy Generator</a></div>
-      </div>
-    </div>
+      <br><div><span data-custom-class='body_text'>This Privacy Policy was created using Termly's </span><a href="https://termly.io/products/privacy-policy-generator/" target="_blank" rel="noopener external" data-custom-class='link'>Privacy Policy Generator</a></div>`;
+
+  return (
+    <div 
+      className="max-w-4xl mx-auto p-8"
+      dangerouslySetInnerHTML={{ __html: htmlContent }} 
+    />
   );
 }
