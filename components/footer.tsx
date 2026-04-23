@@ -22,7 +22,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-4">
               <a
-                href="#privacy-policy"
+                href="/privacy"
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Privacy Policy
