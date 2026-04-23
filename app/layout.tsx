@@ -5,13 +5,16 @@ import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-
+  
 export const metadata: Metadata = {
   title: 'Olyndra | Fintech for Entrepreneurs',
   description: 'The Fintech for Entrepreneurs Leading Global Agentic Commerce. Secure, fast, and intelligent financial solutions.',
   openGraph: {
     title: 'Olyndra | Fintech for Entrepreneurs',
     description: 'The Fintech for Entrepreneurs Leading Global Agency.',
+    url: 'https://www.olyndra.ai',
+    siteName: 'Olyndra',
+    type: 'website',
     images: [
       {
         url: 'https://www.olyndra.ai/icon.svg', // Must be an absolute URL
@@ -20,6 +23,12 @@ export const metadata: Metadata = {
         alt: 'Olyndra Logo',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Olyndra | Fintech for Entrepreneurs',
+    description: 'The Fintech for Entrepreneurs Leading Global Agency.',
+    images: ['https://www.olyndra.ai/icon.svg'],
   },
 }
 
