@@ -9,9 +9,6 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Olyndra | Fintech for International Entrepreneurs',
   description: 'The Fintech for International Entrepreneurs Leading Global Agentic Commerce. Secure, fast, and intelligent financial solutions.',
-  icons: {
-    icon: '/icon.svg',
-  },
 }
 
 export default function RootLayout({
@@ -21,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background">
+      <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+      </head>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
