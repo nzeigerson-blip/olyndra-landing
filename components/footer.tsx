@@ -29,7 +29,7 @@ export function Footer() {
               </a>
               <span className="text-muted-foreground/50">|</span>
               <a
-                href="#terms-of-service"
+                href="/terms"
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 Terms of Service
