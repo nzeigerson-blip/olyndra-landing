@@ -7,8 +7,20 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Olyndra | Fintech for International Entrepreneurs',
-  description: 'The Fintech for International Entrepreneurs Leading Global Agentic Commerce. Secure, fast, and intelligent financial solutions.',
+  title: 'Olyndra | Fintech for Entrepreneurs',
+  description: 'The Fintech for Entrepreneurs Leading Global Agentic Commerce. Secure, fast, and intelligent financial solutions.',
+  openGraph: {
+    title: 'Olyndra | Fintech for Entrepreneurs',
+    description: 'The Fintech for Entrepreneurs Leading Global Agency.',
+    images: [
+      {
+        url: 'https://www.olyndra.ai/icon.svg', // Must be an absolute URL
+        width: 800,
+        height: 600,
+        alt: 'Olyndra Logo',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
