@@ -7,31 +7,39 @@ export function EarlyAccess() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  e.preventDefault()
+  setIsSubmitting(true)
 
-    // Send the data to Web3Forms
-    const formData = new FormData(e.currentTarget)
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+  // 1. Get the form data
+  const formData = new FormData(e.currentTarget)
+  
+  // 2. Convert FormData to a plain object
+  const object = Object.fromEntries(formData)
+  const json = JSON.stringify(object)
 
-    const json = await response.json()
+  // 3. Send to Web3Forms
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: json,
+  })
 
-    if (json.success) {
-      setIsSubmitted(true)
-    } else {
-      console.log(json)
-      alert("Oops! Something went wrong. Please try again.")
-    }
-    
-    setIsSubmitting(false)
+  const result = await response.json()
+
+  if (result.success) {
+    setIsSubmitted(true)
+  } else {
+    console.error(result)
+    alert("Oops! Something went wrong. Please try again.")
   }
+  
+  setIsSubmitting(false)
+}
+
+  
   return (
     <section id="early-access" className="py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
