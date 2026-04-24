@@ -52,10 +52,20 @@ export function EarlyAccess() {
               </div>
             ) : (
               <form
-                action="https://formspree.io/f/your-form-id"
+
+                -------
+  
+
+>
+  {/* Add this hidden input with your actual key */}
+
+  
+            -------
+                action="https://api.web3forms.com/submit"
                 method="POST"
                 onSubmit={handleSubmit}
                 className="mt-8"
+              <input type="hidden" name="access_key" value="aaea8fcf-7152-4f73-96ca-d2a8f539fcca" />
               >
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <input
