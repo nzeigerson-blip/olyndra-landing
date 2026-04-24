@@ -6,20 +6,32 @@ export function EarlyAccess() {
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission - replace with actual Formspree endpoint
-    // The form is also set up with action/method for static site compatibility
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    // Send the data to Web3Forms
+    const formData = new FormData(e.currentTarget)
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
 
+    const json = await response.json()
+
+    if (json.success) {
+      setIsSubmitted(true)
+    } else {
+      console.log(json)
+      alert("Oops! Something went wrong. Please try again.")
+    }
+    
     setIsSubmitting(false)
-    setIsSubmitted(true)
-    setEmail("")
   }
-
   return (
     <section id="early-access" className="py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
