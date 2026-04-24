@@ -52,15 +52,6 @@ export function EarlyAccess() {
               </div>
             ) : (
               <form
-
-                -------
-  
-
->
-  {/* Add this hidden input with your actual key */}
-
-  
-            -------
                 action="https://api.web3forms.com/submit"
                 method="POST"
                 onSubmit={handleSubmit}
